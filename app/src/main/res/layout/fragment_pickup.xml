@@ -40,22 +40,30 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/side_margin">
 
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/name"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_text_field"
+                style="@style/Widget.Cupcake.TextInputLayout.OutlinedBox"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/name_hint"
+                app:errorIconDrawable="@drawable/ic_error"
+                app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
                 android:id="@+id/date_options"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="@dimen/margin_between_elements"
+                android:layout_marginTop="@dimen/side_margin"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name">
+                app:layout_constraintTop_toBottomOf="@id/name_text_field">
 
                 <RadioButton
                     android:id="@+id/option0"
