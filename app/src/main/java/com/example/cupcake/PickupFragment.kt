@@ -65,6 +65,7 @@ class PickupFragment : Fragment() {
             binding!!.nameTextField.error = getString(R.string.empty_error)
         }
         else{
+            sharedViewModel.setName(binding!!.name.text.toString())
             binding!!.nameTextField.isErrorEnabled = false
             findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
         }
