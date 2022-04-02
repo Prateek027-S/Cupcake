@@ -44,4 +44,5 @@
         <item quantity="other">%d cupcakes</item>
     </plurals>
     <string name="name_hint">Enter receiver\'s name</string>
+    <string name="empty_error">Please enter receiver\'s name</string>
 </resources>

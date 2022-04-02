@@ -60,7 +60,14 @@ class PickupFragment : Fragment() {
      * Navigate to the next screen to see the order summary.
      */
     fun goToNextScreen() {
-        findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
+        if(binding!!.name.text.toString().isEmpty()){
+            binding!!.nameTextField.isErrorEnabled = true
+            binding!!.nameTextField.error = getString(R.string.empty_error)
+        }
+        else{
+            binding!!.nameTextField.isErrorEnabled = false
+            findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
+        }
     }
 
     fun cancelOrder(){
